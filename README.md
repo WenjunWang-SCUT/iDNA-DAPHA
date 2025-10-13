@@ -6,7 +6,7 @@ This repository provides the model code, domain-adaptive pretraining weight, and
 
 Domain-adaptive pretraining model for fine-tuning:
 - [`dual-scale domain-adaptive pretraining`](https://drive.google.com/file/d/1t3Db41Pti4jxjXojkqcIKI3bjOGPyiu3/view?usp=sharing)
-- [`four-scale_domain-adaptive pretraining`](https://drive.google.com/file/d/1wlQjloip0VxOJGXDrG4X5JX4ZA31F94C/view?usp=sharing)
+- [`four-scale domain-adaptive pretraining`](https://drive.google.com/file/d/1wlQjloip0VxOJGXDrG4X5JX4ZA31F94C/view?usp=sharing)
 
 Trained models for evaluation:
 - [`4mC_C.equisetifolia`](https://drive.google.com/file/d/1xJ-irPvdyhSqunvApOWB_bOCC99tjQ72/view?usp=sharing)
