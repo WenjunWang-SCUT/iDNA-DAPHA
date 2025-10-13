@@ -8,7 +8,7 @@ Domain-adaptive pretraining model for fine-tuning:
 - [`dual-scale domain-adaptive pretraining`](https://drive.google.com/file/d/1t3Db41Pti4jxjXojkqcIKI3bjOGPyiu3/view?usp=sharing)
 - [`four-scale domain-adaptive pretraining`](https://drive.google.com/file/d/1wlQjloip0VxOJGXDrG4X5JX4ZA31F94C/view?usp=sharing)
 
-Trained models for evaluation:
+Finetuned models for evaluation:
 - [`4mC_C.equisetifolia`](https://drive.google.com/file/d/1xJ-irPvdyhSqunvApOWB_bOCC99tjQ72/view?usp=sharing)
 - [`4mC_F.vesca`](https://drive.google.com/file/d/1A99nrNSsM85L-2MrKX3VkOfbuMeOHmXY/view?usp=sharing)
 - [`4mC_S.cerevisiae`](https://drive.google.com/file/d/1IaXbcflo3aoEx7B8E8Cjhvy99jXO-O6C/view?usp=sharing)
