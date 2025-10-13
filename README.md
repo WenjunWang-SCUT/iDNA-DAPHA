@@ -4,6 +4,6 @@ This repository provides the model code, domain-adaptive pretraining weight, and
 
 ## Models
 
-Pre-trained models for fine-tuning
+Domain-adaptive pretraining model for fine-tuning
 
 Trained models for evaluation
