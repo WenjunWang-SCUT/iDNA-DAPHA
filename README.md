@@ -1,6 +1,6 @@
 # iDNA_DAPHA
 
-This repository provides the model code, domain-adaptive pretrained weights, and fine-tuned weights on all benchmark datasets.
+This repository provides the model code, domain-adaptive pretrained weights (dual-scale and four-scale), and fine-tuned weights on all benchmark datasets.
 
 ## Models
 
