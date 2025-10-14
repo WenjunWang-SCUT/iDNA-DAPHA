@@ -9,21 +9,19 @@ sys.path.append(rootPath)
 from configuration import config_init
 from frame import Learner
 
-#临时添加，用于散点图的结果可复现
-import numpy as np
-import random
-import torch
-def set_seed(seed):
-    print('manual seed:', seed)
-    random.seed(seed)
-    np.random.seed(seed)
-    torch.manual_seed(seed)
-    torch.cuda.manual_seed(seed)
-    torch.cuda.manual_seed_all(seed)
-    torch.backends.cudnn.deterministic = True
-    torch.backends.cudnn.benchmark = False
-
-
+# # 临时添加，为保证散点图的可复现性，设置全局随机种子
+# import numpy as np
+# import random
+# import torch
+# def set_seed(seed):
+#     print('manual seed:', seed)
+#     random.seed(seed)
+#     np.random.seed(seed)
+#     torch.manual_seed(seed)
+#     torch.cuda.manual_seed(seed)
+#     torch.cuda.manual_seed_all(seed)
+#     torch.backends.cudnn.deterministic = True
+#     torch.backends.cudnn.benchmark = False
 
 def SL_train(config):
     os.environ["CUDA_VISIBLE_DEVICES"] = str(config.device)
@@ -43,7 +41,7 @@ def SL_train(config):
     learner.init_optimizer()
     learner.def_loss_func()
     # learner.train_model()
-    learner.test_model()
+    learner.test_model() # 评估模型性能
 
 
 def SL_fintune():
@@ -146,7 +144,7 @@ def select_dataset():
 
 
 if __name__ == '__main__':
-    set_seed(10)  #临时添加，用于散点图的结果可复现
+    # set_seed(10)  #临时添加，为保证散点图的可复现性，设置全局随机种子
     config = config_init.get_config()
     config.path_train_data, config.path_test_data = select_dataset()
     SL_train(config)
