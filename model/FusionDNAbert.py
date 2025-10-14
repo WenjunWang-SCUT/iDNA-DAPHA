@@ -50,21 +50,13 @@ class FusionBERT(nn.Module):
             nn.Linear(20, 2)
         )
 
-        # for param in self.bertone.parameters():
-        #     param.requires_grad = False
-        # for param in self.berttwo.parameters():
-        #     param.requires_grad = False
-
-    def forward(self, seqs):#, seqvalue_feat
+    def forward(self, seqs):
         # print(seqs)
         representationX = self.bertone(seqs)
         representationY = self.berttwo(seqs)
-
 
         representation = torch.cat((representationX, representationY), dim=1)
         # representation = representationX + representationY
 
         output = self.classification(representation)
-
-
         return output, representation
