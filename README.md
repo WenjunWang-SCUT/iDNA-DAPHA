@@ -27,4 +27,5 @@ Fine-tuned models for evaluation:
 - [`6mA_T.thermophile`](https://drive.google.com/file/d/1VTKgT6ALv-_RCXcitQvXKGerU8y2-VFO/view?usp=sharing)
 - [`6mA_Xoc BLS256`](https://drive.google.com/file/d/1TPUCOlZsNBfwVszKLAbO8DNB5nJdbVh-/view?usp=sharing)
 
-
+## Contact
+For help or issues using iDNA_DAPHA, please create an issue.
