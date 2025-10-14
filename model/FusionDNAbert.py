@@ -19,10 +19,7 @@ class FusionBERT(nn.Module):
 
         self.config.kmer = self.config.kmers[1]
         self.berttwo = DNAbert.BERT(self.config)
-
-        # self.Ws = nn.Parameter(torch.randn(1, 768).cuda(), requires_grad=True)
-        # self.Wh = nn.Parameter(torch.randn(1, 768).cuda(), requires_grad=True)
-
+        
         # self.transformer = TransformerF.Transformer(
         #         src_vocab_size=64,
         #         src_pad_idx=0,
@@ -57,17 +54,6 @@ class FusionBERT(nn.Module):
         #     param.requires_grad = False
         # for param in self.berttwo.parameters():
         #     param.requires_grad = False
-
-        # self.fc_domain = nn.Sequential(
-        #     RevGrad(alpha=0.3),#
-        #     # nn.Dropout(p=0.9)
-        #     nn.Linear(768 * 2, 128),
-        #     # nn.BatchNorm1d(1024),
-        #     nn.Dropout(p=0.5),
-        #     nn.ReLU(),
-        #     nn.Linear(128, 17),
-        #     # nn.Sigmoid()
-        # )
 
     def forward(self, seqs):#, seqvalue_feat
         # print(seqs)
