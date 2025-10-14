@@ -32,7 +32,7 @@ class DataManager():
         self.train_dataloader = self.construct_dataset(self.train_dataset, self.train_label, self.config.cuda,
                                                        self.config.batch_size)
         self.test_dataloader = self.construct_dataset(self.test_dataset, self.test_label, self.config.cuda,
-                                                      self.config.batch_size)#训练和测试时此处设置2560，只直接测试时self.config.batch_size
+                                                      self.config.batch_size)#璁粌鍜屾祴璇曟椂姝ゅ璁剧疆self.config.batch_size
 
     def construct_dataset(self, sequences, labels, cuda, batch_size):
         if cuda:
