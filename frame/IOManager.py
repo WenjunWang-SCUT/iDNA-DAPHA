@@ -34,7 +34,6 @@ class IOManager():
         save_path_pt = os.path.join(self.result_path, filename)
         torch.save(model_dict, save_path_pt, _use_new_zipfile_serialization=False)
 
-# 打印日志文件
 class LOG():
     def __init__(self, root_path):
         log_path = root_path + '/log'
