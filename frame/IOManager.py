@@ -16,23 +16,19 @@ class IOManager():
     def initialize(self):
         # self.result_path = self.config.path_save + '/' + self.config.path_train_data.split('/')[-2].split(' ')[0] + '10'
         self.result_path = self.config.path_save + '/' + self.config.learn_name + '/' + str(self.config.kmer) + "mer"
-        # self.result_path = self.config.path_save + self.config.learn_name + '/' + str(self.config.lr)+"_"+str(self.config.batch_size)+"_"+self.config.path_train_data.split('/')[-2].split('.')[0]+\
-        #                    self.config.path_params.split('/')[-2].split('_')[-1]+self.config.path_params.split('/')[-1].split('_')[0]+self.config.path_params.split('/')[-1].split('_')[1]
+               
         if not os.path.exists(self.result_path):
             os.makedirs(self.result_path)
-
-        # 生成一份pkl的文件
+     
         with open(self.result_path + '/config.pkl', 'wb') as file:
             pickle.dump(self.config, file)
         self.log = LOG(self.result_path)
 
-        # 生成一份txt文件
         with open(self.result_path + '/config.txt', 'w') as f:
             for key, value in self.config.__dict__.items():
                 key_value_pair = '{}: {}'.format(key, value)
                 f.write(key_value_pair + '\r\n')
 
-    # 保存最佳模型
     def save_model_dict(self, model_dict, save_prefix, metric_name, metric_value):
         filename = '{}, {}[{:.3f}].pt'.format(save_prefix, metric_name, metric_value)
         save_path_pt = os.path.join(self.result_path, filename)
