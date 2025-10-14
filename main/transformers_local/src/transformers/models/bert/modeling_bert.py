@@ -55,7 +55,6 @@ from ...utils import (
     replace_return_docstrings,
 )
 from .configuration_bert import BertConfig
-# from .gma import GMA_Block
 
 logger = logging.get_logger(__name__)
 
@@ -410,7 +409,6 @@ class BertAttention(nn.Module):
     def __init__(self, config, position_embedding_type=None):
         super().__init__()
         self.self = BertSelfAttention(config, position_embedding_type=position_embedding_type)
-        # self.self2 = nn.Conv1d(768, 768, 3, 1, 1)#GMA_Block()
         self.output = BertSelfOutput(config)
         self.pruned_heads = set()
         self.fusion = nn.Linear(config.hidden_size*2, config.hidden_size)
