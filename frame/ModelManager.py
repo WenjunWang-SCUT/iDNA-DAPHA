@@ -58,15 +58,6 @@ class ModelManager():
         if self.config.optimizer == 'AdamW':
             self.optimizer = torch.optim.AdamW(params=self.model.parameters(), lr=self.config.lr,
                                                weight_decay=self.config.reg)
-            # self.optimizer = torch.optim.AdamW([{'params': self.model.bertone.parameters(), 'lr': self.config.lr/10, 'weight_decay': self.config.reg},
-            #                                     {'params': self.model.berttwo.parameters(), 'lr': self.config.lr/10, 'weight_decay': self.config.reg},
-            #                                     {'params': self.model.Ws, 'lr': self.config.lr, 'weight_decay': self.config.reg},
-            #                                     {'params': self.model.Wh, 'lr': self.config.lr, 'weight_decay': self.config.reg},
-            #                                     {'params': self.model.lstm.parameters(), 'lr': self.config.lr, 'weight_decay': self.config.reg},
-            #                                     {'params': self.model.attention.parameters(), 'lr': self.config.lr, 'weight_decay': self.config.reg},
-            #                                     # {'params': self.model.kalman_filter.parameters(), 'lr': self.config.lr, 'weight_decay': self.config.reg},
-            #                                     {'params': self.model.classification.parameters(), 'lr': self.config.lr, 'weight_decay': self.config.reg}])
-
         elif self.config.optimizer == 'Adam':
             self.optimizer = torch.optim.Adam(params=self.model.parameters(), lr=self.config.lr,
                                               weight_decay=self.config.reg)
