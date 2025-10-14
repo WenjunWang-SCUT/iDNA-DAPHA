@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 
-# from transformers import BertTokenizer, BertConfig, BertModel
+# The imported BERTModel has been modified to include hierarchical attention.
 from transformers_local.src.transformers.models.bert.tokenization_bert import BertTokenizer
 from transformers_local.src.transformers.models.bert.configuration_bert import BertConfig
 from transformers_local.src.transformers.models.bert.modeling_bert import BertModel
