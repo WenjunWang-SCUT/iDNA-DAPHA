@@ -7,7 +7,7 @@ def get_config():
     parse.add_argument('-learn-name', type=str, default='trainCross', help='本次训练名称')
 
     parse.add_argument('-path-save', type=str, default='../result/', help='保存字典的位置')
-    parse.add_argument('-save-best', type=bool, default=True, help='当得到更好的准确度是否要保存') #原始是False
+    parse.add_argument('-save-best', type=bool, default=True, help='当得到更好的准确度是否要保存') 
 
     parse.add_argument('-threshold', type=float, default=0.9501, help='准确率阈值')
     parse.add_argument('-cuda', type=bool, default=True)
