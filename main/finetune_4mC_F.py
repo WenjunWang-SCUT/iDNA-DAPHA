@@ -29,7 +29,8 @@ def SL_train(config):
 
     # ToDo 两种的kmers的更改
     if config.model == 'FusionDNAbert':
-        config.kmers = [3, 6]
+        config.kmers = [3, 6] # dual-scale
+        # config.kmers = [3, 4, 5, 6] # four-scale
 
     learner = Learner.Learner(config)
     learner.setIO()
