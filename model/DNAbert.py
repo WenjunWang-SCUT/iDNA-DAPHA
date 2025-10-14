@@ -1,10 +1,10 @@
 import torch
 import torch.nn as nn
 
-from transformers import BertTokenizer, BertConfig, BertModel
-# from transformers_local.src.transformers.models.bert.tokenization_bert import BertTokenizer
-# from transformers_local.src.transformers.models.bert.configuration_bert import BertConfig
-# from transformers_local.src.transformers.models.bert.modeling_bert import BertModel
+# from transformers import BertTokenizer, BertConfig, BertModel
+from transformers_local.src.transformers.models.bert.tokenization_bert import BertTokenizer
+from transformers_local.src.transformers.models.bert.configuration_bert import BertConfig
+from transformers_local.src.transformers.models.bert.modeling_bert import BertModel
 
 # tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
 # model = BertModel.from_pretrained("bert-base-uncased")
@@ -15,7 +15,7 @@ class BERT(nn.Module):
         super(BERT, self).__init__()
         self.config = config
 
-        # 加载预训练模型参数
+        # 用DNAbert初始化模型参数
         self.kmer = config.kmer
         if self.kmer == 3:
             self.pretrainpath = '../pretrain/DNAbert_3mer'#'../pretrain/DNAbert_3mer'
