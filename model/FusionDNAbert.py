@@ -20,15 +20,6 @@ class FusionBERT(nn.Module):
         self.config.kmer = self.config.kmers[1]
         self.berttwo = DNAbert.BERT(self.config)
 
-
-        # self.gma_block_3mer = GMA_Block()
-        # self.dense_3mer = nn.Linear(768, 768)
-        #
-        # self.gma_block_6mer = GMA_Block()
-        # self.dense_6mer = nn.Linear(768, 768)
-        #
-        # self.activation = nn.Tanh()
-
         '''
         new version should use nn.Parameter to initialize the parameters
         '''
