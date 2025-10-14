@@ -20,25 +20,8 @@ class FusionBERT(nn.Module):
         self.config.kmer = self.config.kmers[1]
         self.berttwo = DNAbert.BERT(self.config)
 
-        '''
-        new version should use nn.Parameter to initialize the parameters
-        '''
         # self.Ws = nn.Parameter(torch.randn(1, 768).cuda(), requires_grad=True)
         # self.Wh = nn.Parameter(torch.randn(1, 768).cuda(), requires_grad=True)
-
-        # self.adapter = nn.Sequential(
-        #     nn.Linear(768*2, 384),#1024  18700  10252   1560
-        #     nn.Dropout(0.5),
-        #     nn.ReLU(),
-        #
-        #     nn.Linear(384, 384),  # 1024  18700  10252   1560
-        #     nn.Dropout(0.5),
-        #     nn.ReLU(),
-        #
-        #     nn.Linear(384, 768*2),  # 1024  18700  10252   1560
-        #     # nn.Dropout(p=0.9),
-        #     nn.Sigmoid()
-        # )
 
         # self.transformer = TransformerF.Transformer(
         #         src_vocab_size=64,
@@ -63,7 +46,6 @@ class FusionBERT(nn.Module):
         # self.attention = nn.MultiheadAttention(embed_dim = 256*2, num_heads = 8)
         # self.kalman_filter = KalmanFilter(n_dim_obs=512, n_dim_state=512)
 
-        # self.classification_5hmCM = nn.Sequential(
         self.classification = nn.Sequential(
             nn.Linear(768 * 2, 20),
             nn.Dropout(0.5),
