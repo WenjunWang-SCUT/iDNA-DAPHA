@@ -45,7 +45,6 @@ def SL_fintune(config):
     learner.test_model() # 评估模型性能
 
 def select_dataset():
-    # DNA-MS
     # path_train_data = '../data/DNA_MS/tsv/5hmC/5hmC_H.sapiens/train.tsv'
     # path_test_data = '../data/DNA_MS/tsv/5hmC/5hmC_H.sapiens/test.tsv'
     # path_train_data = '../data/DNA_MS/tsv/5hmC/5hmC_M.musculus/train.tsv'
@@ -70,16 +69,16 @@ def select_dataset():
     # path_test_data = '../data/DNA_MS/tsv/6mA/6mA_F.vesca/test.tsv'
     # path_train_data = '../data/DNA_MS/tsv/6mA/6mA_H.sapiens/train.tsv'
     # path_test_data = '../data/DNA_MS/tsv/6mA/6mA_H.sapiens/test.tsv'
-   #  path_train_data = '../data/DNA_MS/tsv/6mA/6mA_R.chinensis/train.tsv'
-   #  path_test_data = '../data/DNA_MS/tsv/6mA/6mA_R.chinensis/test.tsv'
-   #  path_train_data = '../data/DNA_MS/tsv/6mA/6mA_S.cerevisiae/train.tsv'
-   #  path_test_data = '../data/DNA_MS/tsv/6mA/6mA_S.cerevisiae/test.tsv'
-   #  path_train_data = '../data/DNA_MS/tsv/6mA/6mA_T.thermophile/train.tsv'
-   #  path_test_data = '../data/DNA_MS/tsv/6mA/6mA_T.thermophile/test.tsv'
-   #  path_train_data = '../data/DNA_MS/tsv/6mA/6mA_Tolypocladium/train.tsv'
-   #  path_test_data = '../data/DNA_MS/tsv/6mA/6mA_Tolypocladium/test.tsv'
-   #  path_train_data = '../data/DNA_MS/tsv/6mA/6mA_Xoc BLS256/train.tsv'
-   #  path_test_data = '../data/DNA_MS/tsv/6mA/6mA_Xoc BLS256/test.tsv'
+    # path_train_data = '../data/DNA_MS/tsv/6mA/6mA_R.chinensis/train.tsv'
+    # path_test_data = '../data/DNA_MS/tsv/6mA/6mA_R.chinensis/test.tsv'
+    # path_train_data = '../data/DNA_MS/tsv/6mA/6mA_S.cerevisiae/train.tsv'
+    # path_test_data = '../data/DNA_MS/tsv/6mA/6mA_S.cerevisiae/test.tsv'
+    # path_train_data = '../data/DNA_MS/tsv/6mA/6mA_T.thermophile/train.tsv'
+    # path_test_data = '../data/DNA_MS/tsv/6mA/6mA_T.thermophile/test.tsv'
+    # path_train_data = '../data/DNA_MS/tsv/6mA/6mA_Tolypocladium/train.tsv'
+    # path_test_data = '../data/DNA_MS/tsv/6mA/6mA_Tolypocladium/test.tsv'
+    # path_train_data = '../data/DNA_MS/tsv/6mA/6mA_Xoc BLS256/train.tsv'
+    # path_test_data = '../data/DNA_MS/tsv/6mA/6mA_Xoc BLS256/test.tsv'
     # train_dict = {
     #     "4mCF": '../data/DNA_MS/tsv/4mC/4mC_F.vesca/train.tsv',
     #     "4mCS": '../data/DNA_MS/tsv/4mC/4mC_S.cerevisiae/train.tsv',
@@ -99,29 +98,7 @@ def select_dataset():
     #     "6mATO": '../data/DNA_MS/tsv/6mA/6mA_Tolypocladium/train.tsv',
     #     "6mAX": '../data/DNA_MS/tsv/6mA/6mA_Xoc BLS256/train.tsv',
     # }
-    #
-    # test_dict = {
-    #     "4mCF": '../data/DNA_MS/tsv/4mC/4mC_F.vesca/test.tsv',
-    #     "4mCS": '../data/DNA_MS/tsv/4mC/4mC_S.cerevisiae/test.tsv',
-    #     "4mCC": '../data/DNA_MS/tsv/4mC/4mC_C.equisetifolia/test.tsv',
-    #     "4mCT": '../data/DNA_MS/tsv/4mC/4mC_Tolypocladium/test.tsv',
-    #     "5hmCH": '../data/DNA_MS/tsv/5hmC/5hmC_H.sapiens/test.tsv',
-    #     "5hmCM": '../data/DNA_MS/tsv/5hmC/5hmC_M.musculus/test.tsv',
-    #     "6mAA": '../data/DNA_MS/tsv/6mA/6mA_A.thaliana/test.tsv',
-    #     "6mACEL": '../data/DNA_MS/tsv/6mA/6mA_C.elegans/test.tsv',
-    #     "6mACEQ": '../data/DNA_MS/tsv/6mA/6mA_C.equisetifolia/test.tsv',
-    #     "6mAD": '../data/DNA_MS/tsv/6mA/6mA_D.melanogaster/test.tsv',
-    #     "6mAF": '../data/DNA_MS/tsv/6mA/6mA_F.vesca/test.tsv',
-    #     "6mAH": '../data/DNA_MS/tsv/6mA/6mA_H.sapiens/test.tsv',
-    #     "6mAR": '../data/DNA_MS/tsv/6mA/6mA_R.chinensis/test.tsv',
-    #     "6mAS": '../data/DNA_MS/tsv/6mA/6mA_S.cerevisiae/test.tsv',
-    #     "6mATT": '../data/DNA_MS/tsv/6mA/6mA_T.thermophile/test.tsv',
-    #     "6mATO": '../data/DNA_MS/tsv/6mA/6mA_Tolypocladium/test.tsv',
-    #     "6mAX": '../data/DNA_MS/tsv/6mA/6mA_Xoc BLS256/test.tsv',
-    # }
-    # print(sys.argv)
-    # path_train_data = train_dict[sys.argv[2]]
-    # path_test_data = test_dict[sys.argv[4]]
+ 
 
     print("train" + path_train_data, "test" + path_test_data)
     return path_train_data, path_test_data
