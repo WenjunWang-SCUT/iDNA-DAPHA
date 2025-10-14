@@ -6,7 +6,6 @@ import torch.nn as nn
 
 from model import DNAbert
 # from model.pytorch_revgrad.module import RevGrad
-# from .gmam import GMA_Block
 
 '''bert Fusion 模型'''
 class FusionBERT(nn.Module):
