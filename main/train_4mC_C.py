@@ -9,7 +9,7 @@ sys.path.append(rootPath)
 from configuration import config_init
 from frame import Learner
 
-# #临时添加，用于散点图的结果可复现
+# # 临时添加，为保证散点图的可复现性，设置全局随机种子
 # import numpy as np
 # import random
 # import torch
@@ -23,9 +23,7 @@ from frame import Learner
 #     torch.backends.cudnn.deterministic = True
 #     torch.backends.cudnn.benchmark = False
 
-
-
-def SL_train(config):
+def SL_fintune(config):
     os.environ["CUDA_VISIBLE_DEVICES"] = str(config.device)
     roc_datas, prc_datas = [], []
 
@@ -42,25 +40,8 @@ def SL_train(config):
     learner.load_params()
     learner.init_optimizer()
     learner.def_loss_func()
-    learner.train_model()
-    # learner.test_model()
-
-
-def SL_fintune():
-    # config = config_SL.get_config()
-    config = pickle.load(open('../result/jobID/config.pkl', 'rb'))
-    config.path_params = '../result/jobID/DNAbert, MCC[0.64].pt'
-    learner = Learner.Learner(config)
-    learner.setIO()
-    learner.setVisualization()
-    learner.load_data()
-    learner.init_model()
-    learner.load_params()
-    learner.init_optimizer()
-    learner.def_loss_func()
-    learner.train_model()
-    learner.test_model()
-
+    # learner.train_model()
+    learner.test_model() # 评估模型性能
 
 def select_dataset():
     # DNA-MS
@@ -146,7 +127,7 @@ def select_dataset():
 
 
 if __name__ == '__main__':
-    # set_seed(10)  #临时添加，用于散点图的结果可复现
+    # set_seed(10)  # 临时添加，为保证散点图的可复现性，设置全局随机种子
     config = config_init.get_config()
     config.path_train_data, config.path_test_data = select_dataset()
-    SL_train(config)
+    SL_fintune(config)
