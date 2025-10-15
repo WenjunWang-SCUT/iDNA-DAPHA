@@ -41,7 +41,9 @@ You can modify parameters in `configuration/config_init.py` to fine-tune or pret
 
 The used benchmark datasets are included in `data/DNA_MS`.
 
-Note: Before running domain-adaptive pretraining, fine-tuning, or evaluation, please ensure the [`DNABERT`](https://github.com/jerryji1993/DNABERT) pretrained model (including model weights, tokenizer, and vocab.txt) is downloaded and placed in the 'pretrain/' folder. It is necessary for proper parameter initialization and consistent tokenization. If you want to use the four-scale strategy, modify the value of config.kmers in both the fine-tuning script (`main/finetune_and_eval.py`) and the pretraining script (`main/pretrain_dap.py`).
+Note: 
+- Before running domain-adaptive pretraining, fine-tuning, or evaluation, please ensure the [`DNABERT`](https://github.com/jerryji1993/DNABERT) pretrained model (including model weights, tokenizer, and vocab.txt) is downloaded and placed in the 'pretrain/' folder. It is necessary for proper parameter initialization and consistent tokenization.
+- If you want to use the four-scale strategy, modify the value of config.kmers in both the fine-tuning script (`main/finetune_and_eval.py`) and the pretraining script (`main/pretrain_dap.py`).
 
 ## Run Commands
 ```bash
