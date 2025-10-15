@@ -224,7 +224,7 @@ def interface(configpath, configmodel, seqs, type):
 
 
 if __name__ == "__main__":
-    dataset_name = '4mC_F'
+    dataset_name = '6mA_Xoc'
 
     configPath = os.path.join("result", dataset_name, "config.pkl")
     paramsPath = os.path.join("result", dataset_name, "ACC12_0.89409782734983156.pt")
