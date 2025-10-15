@@ -54,6 +54,9 @@ python finetune_and_eval.py -path-params <PATH_TO_DOMAIN-ADAPTIVE_PRETRAINING_WE
 # Evaluate the model performance using the fine-tuned weights
 python finetune_and_eval.py -do-eval -path-params <PATH_TO_FINETUNED_WEIGHTS> -dataset <DATASET_NAME>
 
+# Pretrain the model with domain-adaptive pretraining
+python pretrain_dap.py
+
 Note: The --dataset argument accepts values such as 4mC_C.equisetifolia, 4mC_F.vesca, 5hmC_H.sapiens, and other benchmark dataset names.
 ``` 
 
