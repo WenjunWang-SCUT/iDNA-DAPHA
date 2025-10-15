@@ -42,7 +42,7 @@ The model can be pretrained using `main/pretrain_dap.py`, and fine-tuned or eval
 The used benchmark datasets are included in `data/DNA_MS`.
 
 
-Note: please download the [`DNABERT`](https://github.com/jerryji1993/DNABERT) models before starting the domain-adaptive pretraining for parameter initialization.
+Note: please download the [`DNABERT`](https://github.com/jerryji1993/DNABERT) models before starting the domain-adaptive pretraining for parameter initialization, and put them into the pretrain folder.       
 
 ## Contact
 
