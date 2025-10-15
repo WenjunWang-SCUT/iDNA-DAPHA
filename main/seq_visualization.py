@@ -14,15 +14,11 @@ from transformers_local.src.transformers.models.bert.modeling_bert import BertMo
 MER = 3
 
 SEQUENCE = ["CTCGAACGGCGTCCCGAACTCGACGACGGCGCGCGAGCGGA"]
-# SEQUENCE = ["GTATAGCGTGCCAGTGTGCTCGCCATGGACTGCGGCGGTTA"]
-# SEQUENCE = ["GAAGCAGAGTCCCTGGGAGGCGCCACTGGTCAGGCCTGGAC"]
-# SEQUENCE = ["ACTTCCAAGAGTGATAATTGAATGAACCTAAAATCACCATA"]
-
 
 '''DNA bert model'''
-class DNABERT(nn.Module):
+class BERT(nn.Module):
     def __init__(self, config):
-        super(DNABERT,self).__init__()
+        super(BERT,self).__init__()
         self.config = config
 
         # 加载预训练模型参数
@@ -67,10 +63,10 @@ class FusionBERT(nn.Module):
         self.config = config
 
         self.config.kmer = self.config.kmers[0]
-        self.bertone = DNABERT(self.config)
+        self.bertone = BERT(self.config)
 
         self.config.kmer = self.config.kmers[1]
-        self.berttwo = DNABERT(self.config)
+        self.berttwo = BERT(self.config)
 
         # self.Ws = torch.randn(1, 768).cuda()
         # self.Wh = torch.randn(1, 768).cuda()
@@ -228,13 +224,10 @@ def interface(configpath, configmodel, seqs, type):
 
 
 if __name__ == "__main__":
-    # dataset_name = '6mAS'
-    #
-    # configPath = "./result/" + dataset_name + "/config.pkl"
-    # paramsPath = "./result/" + dataset_name + "/BERT" + r", ACC[0.828].pt"
-    configPath = "../result/trainCross/8e-06_160_4mC_Tolypocladiumnoacalpre5/config.pkl"
-    paramsPath = "../result/trainCross/8e-06_160_4mC_Tolypocladiumnoacalpre5/ACC4_0.74481273652616.pt"
-    #paramsPath = "../result/trainCross/8e-06_160_4mC_Tolypocladiumnoacalpre5" + "/BERT" + r", ACC[0.85363383134970883].pt"
+    dataset_name = '4mC_F'
+
+    configPath = os.path.join("result", dataset_name, "config.pkl")
+    paramsPath = os.path.join("result", dataset_name, "ACC12_0.89409782734983156.pt")
 
     config = pickle.load(open(configPath, 'rb'))
     config.path_params = paramsPath
