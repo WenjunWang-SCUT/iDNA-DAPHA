@@ -27,5 +27,17 @@ Fine-tuned models for evaluation:
 - [`6mA_T.thermophile`](https://drive.google.com/file/d/1VTKgT6ALv-_RCXcitQvXKGerU8y2-VFO/view?usp=sharing)
 - [`6mA_Xoc BLS256`](https://drive.google.com/file/d/1TPUCOlZsNBfwVszKLAbO8DNB5nJdbVh-/view?usp=sharing)
 
+## Basic Directory
+
+The benchmark datasets used in this project are included in data/DNA_MS.
+
+You can modify parameters in `configuration/config_init.py` to train or pretrain models.
+
+You can change model structure in `model/FusionDNAbert.py` for model training.
+
+You can modify training process and dataset processing in `frame/ModelManager.py` and `frame/DataManager.py` .
+
+The used benchmark datasets are included in `data/DNA_MS`.
+
 ## Contact
 For help or issues using iDNA_DAPHA, please create an issue.
