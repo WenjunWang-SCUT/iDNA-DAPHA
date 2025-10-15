@@ -31,13 +31,13 @@ The following models (weights) are provided for fine-tuning and evaluation:
 
 ## Basic Directory
 
-You can modify parameters in `configuration/config_init.py` to pretrain or train models.
+You can modify parameters in `configuration/config_init.py` to pretrain or fine-tune models.
 
-You can change model structure in `model/FusionDNAbert.py` for model pretraining or training.
+You can change model structure for fine-tuning in `model/FusionDNAbert.py`, or for pretraining in `model/FusionDNAbert_dap.py`.
 
-You can modify training process and dataset processing in `frame/ModelManager.py` and `frame/DataManager.py`.
+You can modify training process and dataset processing for fine-tuning in `frame/ModelManager.py` and `frame/DataManager.py`, or for pretraining in `frame/ModelManager_dap.py` and `frame/DataManager_dap.py`.
 
-The model can be pretrained using `main/pretrain_dap.py`, and fine-tuned or evaluated with pretrained or trained weights using `main/finetune_and_eval.py`.
+The model can be fine-tuned or evaluated with pretrained or trained weights using `main/finetune_and_eval.py`, and pretrained using `main/pretrain_dap.py`.
 
 The used benchmark datasets are included in `data/DNA_MS`.
 
