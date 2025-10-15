@@ -43,6 +43,18 @@ The used benchmark datasets are included in `data/DNA_MS`.
 
 Note: Before running domain-adaptive pretraining, fine-tuning, or evaluation, please ensure the [`DNABERT`](https://github.com/jerryji1993/DNABERT) pretrained model (including model weights, tokenizer, and vocab.txt) is downloaded and placed in the 'pretrain/' folder. It is necessary for proper parameter initialization and consistent tokenization.
 
+## Run Commands
+```bash
+# Enter the `main/` folder
+cd main
+
+# Fine-tune the model using the domain-adaptive pretraining weights
+python finetune_and_eval.py --path-params <PATH_TO_DOMAIN-ADAPTIVE_PRETRAINING_WEIGHTS>
+
+# Evaluate the model performance using the fine-tuned weights
+python finetune_and_eval.py --path-params <PATH_TO_FINETUNED_WEIGHTS>
+``` 
+
 ## Contact
 
 For any questions or issues related to iDNA_DAPHA, please create an issue — I’ll do my best to help.
