@@ -29,8 +29,6 @@ Fine-tuned models for evaluation:
 
 ## Basic Directory
 
-The benchmark datasets used in this project are included in data/DNA_MS.
-
 You can modify parameters in `configuration/config_init.py` to train or pretrain models.
 
 You can change model structure in `model/FusionDNAbert.py` for model training.
