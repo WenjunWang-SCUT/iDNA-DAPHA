@@ -1,4 +1,4 @@
-#### ::: utils for DNABERT-viz motif search ::: ####
+#### ::: utils for model motif search ::: ####
 
 import os
 import pandas as pd
@@ -567,12 +567,10 @@ if __name__ == '__main__':
 
     os.environ["CUDA_VISIBLE_DEVICES"] = '3'
 
-    # dataset_name = '6mAX'
-    #
-    # configPath = "./result/" + dataset_name + "/config.pkl"
-    # paramsPath = "./result/" + dataset_name + "/BERT" + r", ACC[0.882].pt"
-    configPath = "../result/trainCross/8e-06_128_5hmC_Hnoactalphpretrain5/config.pkl"
-    paramsPath = "../result/trainCross/8e-06_128_5hmC_Hnoactalphpretrain5/ACC13_0.95093856655290099.pt"
+    dataset_name = '5hmC_H'    
+    configPath = os.path.join("result", dataset_name, "config.pkl")
+    paramsPath = os.path.join("result", dataset_name, "ACC13_0.95093856655290099.pt")
+    
     dev_pos, dev_neg = load_tsv('../data/DNA_MS/tsv/5hmC/5hmC_H.sapiens/train.tsv')
     pos_atten_scores = seq_visualization.interface(configPath, paramsPath, dev_pos, 3)
 
