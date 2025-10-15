@@ -43,6 +43,7 @@ def SL_fintune(config):
     # learner.train_model()
     learner.test_model() # 评估模型性能
 
+# Use the dataset for the specified downstream task to fine-tune the model
 def select_dataset():
     # path_train_data = '../data/DNA_MS/tsv/5hmC/5hmC_H.sapiens/train.tsv'
     # path_test_data = '../data/DNA_MS/tsv/5hmC/5hmC_H.sapiens/test.tsv'
