@@ -1,6 +1,6 @@
 # iDNA_DAPHA
 
-This repository provides the model code, domain-adaptive pretrained weights (dual-scale and four-scale), and fine-tuned weights on all benchmark datasets.
+This repository contains the model code, domain-adaptive pretrained weights (dual-scale and four-scale), and fine-tuned weights on all benchmark datasets for "iDNA-DAPHA: a generic framework for methylation prediction via domain-adaptive pretraining and hierarchical attention".
 
 ## Models
 
