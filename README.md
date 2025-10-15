@@ -49,10 +49,10 @@ Note: Before running domain-adaptive pretraining, fine-tuning, or evaluation, pl
 cd main
 
 # Fine-tune the model using the domain-adaptive pretraining weights
-python finetune_and_eval.py --path-params <PATH_TO_DOMAIN-ADAPTIVE_PRETRAINING_WEIGHTS>
+python finetune_and_eval.py -path-params <PATH_TO_DOMAIN-ADAPTIVE_PRETRAINING_WEIGHTS>
 
 # Evaluate the model performance using the fine-tuned weights
-python finetune_and_eval.py --path-params <PATH_TO_FINETUNED_WEIGHTS>
+python finetune_and_eval.py -do-eval -path-params <PATH_TO_FINETUNED_WEIGHTS>
 ``` 
 
 ## Contact
