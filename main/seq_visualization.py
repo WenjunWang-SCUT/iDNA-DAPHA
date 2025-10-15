@@ -6,7 +6,7 @@ import numpy as np
 import os
 import pickle
 
-# from transformers import BertTokenizer, BertModel, BertConfig
+# The imported BERTModel has been modified to include hierarchical attention.
 from transformers_local.src.transformers.models.bert.tokenization_bert import BertTokenizer
 from transformers_local.src.transformers.models.bert.configuration_bert import BertConfig
 from transformers_local.src.transformers.models.bert.modeling_bert import BertModel
@@ -15,7 +15,7 @@ MER = 3
 
 SEQUENCE = ["CTCGAACGGCGTCCCGAACTCGACGACGGCGCGCGAGCGGA"]
 
-'''DNA bert model'''
+'''BERT model'''
 class BERT(nn.Module):
     def __init__(self, config):
         super(BERT,self).__init__()
