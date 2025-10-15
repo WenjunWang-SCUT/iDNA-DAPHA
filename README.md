@@ -48,11 +48,13 @@ Note: Before running domain-adaptive pretraining, fine-tuning, or evaluation, pl
 # Enter the `main/` folder
 cd main
 
-# Fine-tune the model using the domain-adaptive pretraining weights
-python finetune_and_eval.py -path-params <PATH_TO_DOMAIN-ADAPTIVE_PRETRAINING_WEIGHTS>
+# Fine-tune the model using the domain-adaptive pretraining weights 
+python finetune_and_eval.py -path-params <PATH_TO_DOMAIN-ADAPTIVE_PRETRAINING_WEIGHTS> -dataset <DATASET_NAME>
 
 # Evaluate the model performance using the fine-tuned weights
-python finetune_and_eval.py -do-eval -path-params <PATH_TO_FINETUNED_WEIGHTS>
+python finetune_and_eval.py -do-eval -path-params <PATH_TO_FINETUNED_WEIGHTS> -dataset <DATASET_NAME>
+
+Note: The --dataset argument accepts values such as 4mC_C.equisetifolia, 4mC_F.vesca, 5hmC_H.sapiens, and other benchmark dataset names.
 ``` 
 
 ## Contact
