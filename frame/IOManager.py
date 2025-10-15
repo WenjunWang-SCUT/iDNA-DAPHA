@@ -14,8 +14,8 @@ class IOManager():
         self.log = None
 
     def initialize(self):
-        # self.result_path = self.config.path_save + '/' + self.config.path_train_data.split('/')[-2].split(' ')[0] + '10'
-        self.result_path = self.config.path_save + '/' + self.config.learn_name + '/' + str(self.config.kmer) + "mer"
+        dataset_name = os.path.basename(os.path.dirname(self.config.path_train_data))
+        self.result_path = self.config.path_save + '/' + dataset_name
                
         if not os.path.exists(self.result_path):
             os.makedirs(self.result_path)
