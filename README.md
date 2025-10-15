@@ -40,4 +40,5 @@ The model can be pretrained using `main/pretrain_dap.py`, and fine-tuned or eval
 The used benchmark datasets are included in `data/DNA_MS`.
 
 ## Contact
-For help or issues using iDNA_DAPHA, please create an issue.
+
+For any questions or issues related to iDNA_DAPHA, please create an issue — I’ll do my best to help.
