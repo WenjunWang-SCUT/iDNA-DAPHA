@@ -3,7 +3,8 @@ import torch.nn as nn
 import torch.nn.functional as F
 import numpy as np
 
-from model import FusionDNAbert, ClassificationDNAbert, Focal_Loss, FGM
+from model import FusionDNAbert_dap as FusionDNAbert
+from model import ClassificationDNAbert, Focal_Loss, FGM
 from sklearn.metrics import auc, roc_curve, precision_recall_curve, average_precision_score
 import os
 

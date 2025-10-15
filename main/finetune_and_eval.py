@@ -40,52 +40,33 @@ def SL_fintune(config):
     learner.load_params()
     learner.init_optimizer()
     learner.def_loss_func()
-    # learner.train_model()
-    learner.test_model() # 评估模型性能
+    if config.do_eval:
+        learner.test_model() # 评估模型性能
+    else:
+        learner.train_model()
 
 # Use the dataset for the specified downstream task to fine-tune the model
-def select_dataset():
-    # path_train_data = '../data/DNA_MS/tsv/5hmC/5hmC_H.sapiens/train.tsv'
-    # path_test_data = '../data/DNA_MS/tsv/5hmC/5hmC_H.sapiens/test.tsv'
-    # path_train_data = '../data/DNA_MS/tsv/5hmC/5hmC_M.musculus/train.tsv'
-    # path_test_data = '../data/DNA_MS/tsv/5hmC/5hmC_M.musculus/test.tsv'
-    path_train_data = '../data/DNA_MS/tsv/4mC/4mC_C.equisetifolia/train.tsv'
-    path_test_data = '../data/DNA_MS/tsv/4mC/4mC_C.equisetifolia/test.tsv'
-    # path_train_data = '../data/DNA_MS/tsv/4mC/4mC_F.vesca/train.tsv'
-    # path_test_data = '../data/DNA_MS/tsv/4mC/4mC_F.vesca/test.tsv'
-    # path_train_data = '../data/DNA_MS/tsv/4mC/4mC_S.cerevisiae/train.tsv'
-    # path_test_data = '../data/DNA_MS/tsv/4mC/4mC_S.cerevisiae/test.tsv'
-    # path_train_data = '../data/DNA_MS/tsv/4mC/4mC_Tolypocladium/train.tsv'
-    # path_test_data = '../data/DNA_MS/tsv/4mC/4mC_Tolypocladium/test.tsv'
-    # path_train_data = '../data/DNA_MS/tsv/6mA/6mA_A.thaliana/train.tsv'
-    # path_test_data = '../data/DNA_MS/tsv/6mA/6mA_A.thaliana/test.tsv'
-    # path_train_data = '../data/DNA_MS/tsv/6mA/6mA_C.elegans/train.tsv'
-    # path_test_data = '../data/DNA_MS/tsv/6mA/6mA_C.elegans/test.tsv'
-    # path_train_data = '../data/DNA_MS/tsv/6mA/6mA_C.equisetifolia/train.tsv'
-    # path_test_data = '../data/DNA_MS/tsv/6mA/6mA_C.equisetifolia/test.tsv'
-    # path_train_data = '../data/DNA_MS/tsv/6mA/6mA_D.melanogaster/train.tsv'
-    # path_test_data = '../data/DNA_MS/tsv/6mA/6mA_D.melanogaster/test.tsv'
-    # path_train_data = '../data/DNA_MS/tsv/6mA/6mA_F.vesca/train.tsv'
-    # path_test_data = '../data/DNA_MS/tsv/6mA/6mA_F.vesca/test.tsv'
-    # path_train_data = '../data/DNA_MS/tsv/6mA/6mA_H.sapiens/train.tsv'
-    # path_test_data = '../data/DNA_MS/tsv/6mA/6mA_H.sapiens/test.tsv'
-    # path_train_data = '../data/DNA_MS/tsv/6mA/6mA_R.chinensis/train.tsv'
-    # path_test_data = '../data/DNA_MS/tsv/6mA/6mA_R.chinensis/test.tsv'
-    # path_train_data = '../data/DNA_MS/tsv/6mA/6mA_S.cerevisiae/train.tsv'
-    # path_test_data = '../data/DNA_MS/tsv/6mA/6mA_S.cerevisiae/test.tsv'
-    # path_train_data = '../data/DNA_MS/tsv/6mA/6mA_T.thermophile/train.tsv'
-    # path_test_data = '../data/DNA_MS/tsv/6mA/6mA_T.thermophile/test.tsv'
-    # path_train_data = '../data/DNA_MS/tsv/6mA/6mA_Tolypocladium/train.tsv'
-    # path_test_data = '../data/DNA_MS/tsv/6mA/6mA_Tolypocladium/test.tsv'
-    # path_train_data = '../data/DNA_MS/tsv/6mA/6mA_Xoc BLS256/train.tsv'
-    # path_test_data = '../data/DNA_MS/tsv/6mA/6mA_Xoc BLS256/test.tsv'
- 
-    print("train" + path_train_data, "test" + path_test_data)
+def select_dataset(dataset):
+    if "4mC" in dataset:
+        path_train_data = os.path.join('../data/DNA_MS/tsv/4mC', dataset, 'train.tsv')
+        path_test_data = os.path.join('../data/DNA_MS/tsv/4mC', dataset, 'test.tsv')
+        print("train" + path_train_data, "test" + path_test_data)
+    elif "5hmC" in dataset:
+        path_train_data = os.path.join('../data/DNA_MS/tsv/5hmC', dataset, 'train.tsv')
+        path_test_data = os.path.join('../data/DNA_MS/tsv/5hmC', dataset, 'test.tsv')
+        print("train" + path_train_data, "test" + path_test_data)
+    elif "5hmC" in dataset:
+        path_train_data = os.path.join('../data/DNA_MS/tsv/6mA', dataset, 'train.tsv')
+        path_test_data = os.path.join('../data/DNA_MS/tsv/6mA', dataset, 'test.tsv')
+        print("train" + path_train_data, "test" + path_test_data)
+    else:
+        print("Please input the correct dataset.")
+
     return path_train_data, path_test_data
 
 
 if __name__ == '__main__':
     # set_seed(10)  # 临时添加，为保证散点图的可复现性，设置全局随机种子
     config = config_init.get_config()
-    config.path_train_data, config.path_test_data = select_dataset()
+    config.path_train_data, config.path_test_data = select_dataset(config.dataset)
     SL_fintune(config)

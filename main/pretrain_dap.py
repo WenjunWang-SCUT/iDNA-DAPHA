@@ -8,7 +8,7 @@ rootPath = os.path.split(curPath)[0]
 sys.path.append(rootPath)
 
 from configuration import config_init
-from frame import Learner
+from frame import Learner_dap as Learner
 
 
 def SL_pretrain(config):
@@ -49,8 +49,6 @@ def select_dataset():
         "6mAX": '../data/DNA_MS/tsv/6mA/6mA_Xoc BLS256/train.tsv',
     }
 
-    # print("train" + path_train_data, "test" + path_test_data)
-    # return path_train_data, path_test_data
     return train_dict
 
 

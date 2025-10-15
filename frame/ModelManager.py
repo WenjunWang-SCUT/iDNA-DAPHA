@@ -343,7 +343,7 @@ class ModelManager():
                 self.visualizer.test_loss_record.append(avg_test_loss.cpu().detach().numpy())
                 self.test_performance.append(test_performance)
 
-                log_text = '\n' + '=' * 20 + ' Test Performance. Epoch[{}] '.format(epoch) + '=' * 20 \
+                log_text = '\n' + '=' * 20 + ' Model Performance. Epoch[{}] '.format(epoch) + '=' * 20 \
                            + '\n[ACC,\tSE,\t\tSP,\t\tAUC,\tMCC]\n' + '{:.4f},\t{:.4f},\t{:.4f},\t{:.4f},\t{:.4f}'.format(
                     test_performance[0], test_performance[1], test_performance[2], test_performance[3],
                     test_performance[4]) \
@@ -359,8 +359,8 @@ class ModelManager():
                     best_repres_list = repres_list
                     best_label_list = label_list
                     if self.config.save_best and best_mcc > self.config.threshold:
-                        self.IOManager.save_model_dict(self.model.state_dict(), 'nogrl',
-                                                       'ACC' + str(epoch), best_mcc)
+                        self.IOManager.save_model_dict(self.model.state_dict(), 'ACC',
+                                                        str(epoch), best_mcc)
         return best_performance, best_repres_list, best_label_list, best_ROC, best_PRC
 
     def __SL_test(self, dataloader):
