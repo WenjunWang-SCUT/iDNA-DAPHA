@@ -13,7 +13,7 @@ The following models (weights) are provided for fine-tuning and evaluation:
 | `Dual-Scale` (3- & 6-mers) | Recommended. The primary model in our work, balancing performance and efficiency. | [Link](https://drive.google.com/file/d/1t3Db41Pti4jxjXojkqcIKI3bjOGPyiu3/view?usp=sharing) |
 | `Four-Scale` (3- to 6-mers) | For users prioritizing maximal performance over computational cost. | [Link](https://drive.google.com/file/d/1wlQjloip0VxOJGXDrG4X5JX4ZA31F94C/view?usp=sharing) |
 
-- Fine-tuned models for evaluation
+- Fine-tuned models (dual-scale) for evaluation
 
 | Dataset | Download | Dataset | Download |
 | :--- | :--- | :--- | :--- |
