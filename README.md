@@ -61,4 +61,4 @@ Note: The --dataset argument accepts values such as 4mC_C.equisetifolia, 4mC_F.v
 
 ## Contact
 
-For any questions or issues related to iDNA_DAPHA, please create an issue — We will do our best to help.
+For any questions or issues related to iDNA_DAPHA, please create an issue — we will do our best to help.
