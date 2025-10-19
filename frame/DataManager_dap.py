@@ -39,9 +39,7 @@ class DataManager():
             index += 1
         self.train_dataloader = self.construct_dataset_type(self.train_dataset, self.train_label, self.config.cuda,
                                                        self.config.batch_size, train_type)
-        # self.test_dataloader = self.construct_dataset(self.test_dataset, self.test_label, self.config.cuda,
-        #                                               self.config.batch_size)
-
+      
     def construct_dataset_type(self, sequences, labels, cuda, batch_size, type):
         if cuda:
             labels = torch.cuda.LongTensor(labels)
