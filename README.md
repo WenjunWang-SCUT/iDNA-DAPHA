@@ -40,7 +40,7 @@ The following models (weights) are provided for fine-tuning and evaluation:
 - The used benchmark datasets are included in `data/DNA_MS`.
 
 Note: 
-Before running domain-adaptive pretraining, fine-tuning, or evaluation, please ensure the [`DNABERT`](https://github.com/jerryji1993/DNABERT) pretrained model (including model weights, tokenizer, and vocab.txt) is downloaded and placed in the `pretrain/` folder. It is necessary for proper parameter initialization and consistent tokenization. If you want to use the four-scale strategy, set `config.kmers = [3, 4, 5, 6]` in both the fine-tuning script (`main/finetune_and_eval.py`) and the pretraining script (`main/pretrain_dap.py`).
+Before running domain-adaptive pretraining, fine-tuning, or evaluation, please ensure the [`DNABERT`](https://github.com/jerryji1993/DNABERT) pretrained model (including the model weights and tokeniser files, e.g., `pytorch_model.bin`, `vocab.txt`, etc.) is downloaded and placed in subfolders under the `pretrain/` directory—for example, `pretrain/DNAbert_3mer/`, `pretrain/DNAbert_6mer/`. It is necessary for proper parameter initialisation and consistent tokenisation. If you plan to use the four-scale strategy, set `config.kmers = [3, 4, 5, 6]` in both the fine-tuning script (`main/finetune_and_eval.py`) and the pretraining script (`main/pretrain_dap.py`).
 
 ## Run Commands
 ```bash
