@@ -26,11 +26,9 @@ class DataManager():
         self.test_dataloader = None
 
     def load_data(self):
-        # self.train_dataset, self.train_label = util_file.load_tsv_format_data(self.config.path_train_data)
-        # self.test_dataset, self.test_label = util_file.load_tsv_format_data(self.config.path_test_data)
-
         train_type = []
         index = 0
+        
         for key,file_train_data in self.config.path_train_data.items():
             item_train_dataset, item_train_label = util_file.load_tsv_format_data(file_train_data)
             self.train_dataset.extend(item_train_dataset)
