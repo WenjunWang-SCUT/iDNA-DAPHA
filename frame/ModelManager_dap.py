@@ -314,8 +314,14 @@ class ModelManager():
                     # train_acc = 100.0 * corrects / the_batch_size
                     print('Epoch[{}] Batch[{}] - loss: {:.6f}'.format(epoch, step, train_loss))
         
-        model_save_path = os.path.join(self.config.path_save + 'dap', f"dual-scale_dap.pth")
-        torch.save(self.model.state_dict(), model_save_path)
+        if self.config.kmers == [3, 6]:
+            model_save_path = os.path.join(self.config.path_save, 'dap', f"dual-scale_dap.pth")
+            torch.save(self.model.state_dict(), model_save_path)
+        elif self.config.kmers == [3, 4, 5, 6]:
+            model_save_path = os.path.join(self.config.path_save, 'dap', f"four-scale_dap.pth")
+            torch.save(self.model.state_dict(), model_save_path)
+        else:
+            print("Unknown k-mer configuration")
 
         return best_performance, best_repres_list, best_label_list, best_ROC, best_PRC
 
