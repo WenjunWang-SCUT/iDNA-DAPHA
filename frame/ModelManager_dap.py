@@ -289,7 +289,7 @@ class ModelManager():
         best_repres_list = None
         best_label_list = None
 
-        for epoch in range(1, self.config.epoch + 1):
+        for epoch in range(1, 5 + 1): # five epoches for dap
             self.model.train()
             for batch in train_dataloader:
                 train_loss = 0
@@ -313,8 +313,8 @@ class ModelManager():
                     # the_batch_size = label.shape[0]
                     # train_acc = 100.0 * corrects / the_batch_size
                     print('Epoch[{}] Batch[{}] - loss: {:.6f}'.format(epoch, step, train_loss))
-
-        model_save_path = os.path.join("./", f"dual-scale_dap.pth")
+        
+        model_save_path = os.path.join(self.config.path_save + 'dap', f"dual-scale_dap.pth")
         torch.save(self.model.state_dict(), model_save_path)
 
         return best_performance, best_repres_list, best_label_list, best_ROC, best_PRC
