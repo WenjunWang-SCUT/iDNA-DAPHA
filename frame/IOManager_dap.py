@@ -14,7 +14,7 @@ class IOManager():
         self.log = None
 
     def initialize(self):
-        self.result_path = self.config.path_save + 'dap'
+        self.result_path = os.path.join(self.config.path_save, 'dap')
                
         if not os.path.exists(self.result_path):
             os.makedirs(self.result_path)
